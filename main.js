@@ -1,6 +1,4 @@
 var Clock = function() {
-    
-
 };
 
 Clock.prototype.update = function (cb) {
@@ -8,8 +6,8 @@ Clock.prototype.update = function (cb) {
     setInterval(function () {
         cb(self.build());
     }, 1000);
-    
 };
+
 Clock.prototype.build = function () {
     var date = new Date();
     var year = date.getFullYear();
@@ -21,11 +19,14 @@ Clock.prototype.build = function () {
     var res = year + '/' + month + '/' + day + ' ' + hour + ':' + minutes + ':' + sec;
     return res;
 };
+
 Clock.prototype.print = function (str) {
     console.clear();
     console.log(str);
-}
+};
+
 Clock.helper = function (num) {
     return (num<10) ? '0' + num : String(num); 
-}
+};
+
 module.exports = Clock;
